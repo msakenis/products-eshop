@@ -6,6 +6,7 @@ const theme = {
   grey: {
     dark: '#3b3b3b',
     light: '#d9d9d9',
+    hover: '#eaeaeb',
   },
   background: {
     main: '#f8f4f1',
