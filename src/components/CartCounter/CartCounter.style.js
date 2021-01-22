@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const MainWrapper = styled.div``;
+export const MainWrapper = styled.div`
+  margin-top: 1.5em;
+`;
 
 export const FlexWrapper = styled.div`
   display: flex;
@@ -25,6 +27,7 @@ export const MiddleDiv = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.grey.light};
   margin: auto 0;
   padding: 0.5em 2em;
+  font-size: 0.9rem;
 `;
 
 export const Text = styled.p`

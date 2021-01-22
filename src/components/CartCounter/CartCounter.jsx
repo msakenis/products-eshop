@@ -8,9 +8,9 @@ const CartCounter = () => {
         Krepšelyje <strong>1 vnt.</strong>
       </S.Text>
       <S.FlexWrapper>
-        <S.CounterButton btnType="minus">-</S.CounterButton>
+        <S.CounterButton btnType="minus">&#8722;</S.CounterButton>
         <S.MiddleDiv>1 vnt.</S.MiddleDiv>
-        <S.CounterButton btnType="plus">+</S.CounterButton>
+        <S.CounterButton btnType="plus">&#43;</S.CounterButton>
       </S.FlexWrapper>
     </S.MainWrapper>
   );
