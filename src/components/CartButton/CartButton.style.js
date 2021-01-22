@@ -4,7 +4,7 @@ export const Button = styled.button`
   border: 1px solid ${({ theme }) => theme.grey.light};
   cursor: pointer;
   padding: 1em 1.6em;
-  min-height: 2.5em;
+  min-height: 3em;
   border-radius: 25px;
   background: none;
   display: flex;
