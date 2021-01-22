@@ -4,18 +4,8 @@ import Button from './Button';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../theme';
 
-storiesOf('Button', module)
-  .add('Primary Button', () => (
-    <ThemeProvider theme={theme}>
-      <Button color="primary" handleClick={() => console.log('clicked')}>
-        Primary Button
-      </Button>
-    </ThemeProvider>
-  ))
-  .add('Secondary Button', () => (
-    <ThemeProvider theme={theme}>
-      <Button color="secondary" handleClick={() => console.log('clicked')}>
-        Primary Button
-      </Button>
-    </ThemeProvider>
-  ));
+storiesOf('Button', module).add('Primary Button', () => (
+  <ThemeProvider theme={theme}>
+    <Button handleClick={() => console.log('clicked')}>Į krepšelį</Button>
+  </ThemeProvider>
+));

@@ -1,26 +1,20 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background: ${(props) =>
-    props.color === 'primary'
-      ? props.theme.primary.background
-      : props.theme.secondary.background};
-  color: ${(props) =>
-    props.color === 'primary'
-      ? props.theme.primary.color
-      : props.theme.secondary.color};
-  border: none;
-  border-radius: 5px;
-  padding: 0.5em 2em;
+  color: #fff;
+  background-color: ${({ theme }) => theme.red.light};
+  height: 2em;
+  max-width: 10.875em;
+  line-height: 1em;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 0.5em 1em;
+  font-size: 0.75rem;
+  width: 100%;
+  border: 0;
   cursor: pointer;
+
   &&:hover {
-    color: ${(props) =>
-      props.color === 'primary'
-        ? props.theme.primaryHover.color
-        : props.theme.secondaryHover.color};
-    background: ${(props) =>
-      props.color === 'primary'
-        ? props.theme.primaryHover.background
-        : props.theme.secondaryHover.background};
+    background-color: ${({ theme }) => theme.red.dark};
   }
 `;
