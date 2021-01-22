@@ -5,12 +5,15 @@ import 'normalize.css';
 import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import GlobalStyle from './GlobalStyle';
+import CartProvider from './contexts/cart.context';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Routes />
+      <CartProvider>
+        <Routes />
+      </CartProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
