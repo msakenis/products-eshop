@@ -1,12 +1,17 @@
 import React from 'react';
-import { Button } from '../../components';
+import { ProductCard, CartSection } from '../../components';
+import * as S from './Home.style';
+import products from '../../utils/products';
 
-function Home() {
+const Home = () => {
   return (
-    <>
-      <Button handleClick={() => alert('Hello')}>Click Me</Button>
-    </>
+    <S.MainWrapper>
+      <S.ProductsFlex>
+        <ProductCard products={products} />
+      </S.ProductsFlex>
+      <CartSection />
+    </S.MainWrapper>
   );
-}
+};
 
 export default Home;
