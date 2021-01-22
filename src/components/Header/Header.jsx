@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CartButton } from '../';
-import Logo from '../../assets/logo-barbora.png';
+import { Logo } from '../../assets/';
 import * as S from './Header.style';
 
 const Header = () => {

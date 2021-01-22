@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Logo = styled.img`
   height: 3em;
-  padding: 1em 0;
+  padding: 1em;
 `;
 export const Header = styled.header`
   background-color: #fff;
