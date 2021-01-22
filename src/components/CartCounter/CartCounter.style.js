@@ -14,7 +14,6 @@ export const CounterButton = styled.button`
   flex-grow: 1;
   font-size: 1.5rem;
   background: none;
-
   cursor: pointer;
   &&:hover {
     background-color: ${({ theme }) => theme.grey.hover};
