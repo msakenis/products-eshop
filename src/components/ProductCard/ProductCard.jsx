@@ -6,7 +6,9 @@ import { Button, CartCounter } from '../';
 import { toCurrency } from '../../helpers/SharedFunctions';
 
 const ProductCard = ({ products }) => {
-  const { addProduct } = useContext(CartContext);
+  const { addProduct, cartItems } = useContext(CartContext);
+
+  const isInCart = (id) => cartItems.some((item) => item.id === id);
 
   return (
     <>
@@ -25,9 +27,13 @@ const ProductCard = ({ products }) => {
             <S.StyledLink to="/">{product.title}</S.StyledLink>
             <S.PriceTag>{toCurrency(product.price)}</S.PriceTag>
             <S.ButtonDiv>
-              <Button handleClick={() => addProduct(product)}>
-                Į krepšelį
-              </Button>
+              {isInCart(product.id) ? (
+                <CartCounter />
+              ) : (
+                <Button handleClick={() => addProduct(product)}>
+                  Į krepšelį
+                </Button>
+              )}
             </S.ButtonDiv>
           </S.AllBlockDiv>
         ))}
