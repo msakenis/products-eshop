@@ -13,7 +13,7 @@ const Header = () => {
         </Link>
 
         <S.CartButtonDiv>
-          <CartButton itemsInCart={1} totalPrice={10.33} />
+          <CartButton />
         </S.CartButtonDiv>
       </S.Wrapper>
     </S.Header>
