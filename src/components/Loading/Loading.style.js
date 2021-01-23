@@ -31,14 +31,17 @@ export const Loader = styled.div`
     position: absolute;
     top: 0;
   }
+
   &::before {
     left: -3.5em;
     -webkit-animation-delay: -0.32s;
     animation-delay: -0.32s;
   }
+
   &::after {
     left: 3.5em;
   }
+
   @-webkit-keyframes load7 {
     0%,
     80%,
@@ -49,6 +52,7 @@ export const Loader = styled.div`
       box-shadow: 0 2.5em 0 0;
     }
   }
+
   @keyframes load7 {
     0%,
     80%,

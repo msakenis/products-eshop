@@ -28,7 +28,6 @@ const CartProvider = ({ children }) => {
     addProduct,
     increase,
     decrease,
-
     ...state,
   };
 

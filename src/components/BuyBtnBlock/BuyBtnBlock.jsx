@@ -15,11 +15,13 @@ const BuyBtnBlock = () => {
       >
         Pirkti
       </S.Button>
+
       <S.FlexPriceBlock>
         <S.FlexDiv>
           <S.PriceTitle>Kaina</S.PriceTitle>
           <S.Icon src={BasketIcon} alt="basket" />
         </S.FlexDiv>
+
         <S.PriceTag>{toCurrency(totalSum)}</S.PriceTag>
       </S.FlexPriceBlock>
     </S.MainWrapper>
