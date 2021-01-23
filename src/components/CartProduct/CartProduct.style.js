@@ -50,6 +50,7 @@ export const ButtonSection = styled.div`
   justify-content: space-between;
   width: 15%;
 `;
+
 export const Button = styled.button`
   background: none;
   outline: 0;
@@ -81,6 +82,6 @@ export const QntyDiv = styled.div`
 
 export const QntyTag = styled.span`
   border: 1px solid ${({ theme }) => theme.grey.light};
-  padding: 0.2em;
+  padding: 0.2em 1em;
   font-size: 0.8rem;
 `;
