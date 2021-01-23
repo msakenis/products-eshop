@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CartIcon } from '../../assets/';
 import * as S from './CartButton.style';
 import { toCurrency } from '../../helpers/SharedFunctions';
+import { CartContext } from '../../contexts/cart.context';
 
-const CartButton = ({ totalPrice, itemsInCart }) => {
+const CartButton = () => {
+  const { totalSum, cartItems } = useContext(CartContext);
+
   return (
     <S.Button>
-      {itemsInCart > 0 && <S.NumberDiv>{itemsInCart}</S.NumberDiv>}
+      {cartItems && cartItems.length > 0 && (
+        <S.NumberDiv>{cartItems.length}</S.NumberDiv>
+      )}
       <S.Icon src={CartIcon} alt="cart" />
-      <span>{toCurrency(totalPrice)}</span>
+      <span>{toCurrency(totalSum)}</span>
     </S.Button>
   );
 };
