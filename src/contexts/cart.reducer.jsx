@@ -1,8 +1,5 @@
 import actions from './actions';
 
-const itemCount = (cartItems) =>
-  cartItems.reduce((total, product) => total + product.quantity, 0);
-
 const totalSum = (cartItems) =>
   cartItems
     .reduce((total, product) => total + product.price * product.quantity, 0)
@@ -20,7 +17,6 @@ const reducer = (state, action) => {
 
       return {
         ...state,
-        itemCount: itemCount(state.cartItems),
         totalSum: totalSum(state.cartItems),
         cartItems: [...state.cartItems],
       };
@@ -29,11 +25,41 @@ const reducer = (state, action) => {
       const updatedCartItems = state.cartItems.filter(
         (item) => item.id !== action.payload.id,
       );
+
       return {
         ...state,
-        itemCount: itemCount(updatedCartItems),
         totalSum: totalSum(updatedCartItems),
         cartItems: [...updatedCartItems],
+      };
+
+    case actions.INCREASE:
+      const updatedItems = state.cartItems.map((item) => {
+        if (item.id === action.payload.id) {
+          return { ...item, quantity: +item.quantity + 1 };
+        } else {
+          return item;
+        }
+      });
+
+      return {
+        ...state,
+        totalSum: totalSum(updatedItems),
+        cartItems: [...updatedItems],
+      };
+
+    case actions.DECREASE:
+      const updatedList = state.cartItems.map((item) => {
+        if (item.id === action.payload.id) {
+          return { ...item, quantity: +item.quantity - 1 };
+        } else {
+          return item;
+        }
+      });
+
+      return {
+        ...state,
+        totalSum: totalSum(updatedList),
+        cartItems: [...updatedList],
       };
 
     default:
