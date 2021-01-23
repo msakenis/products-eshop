@@ -28,7 +28,7 @@ const CartCounter = ({ product }) => {
             &#8722;
           </S.CounterButton>
         )}
-        <S.MiddleDiv>1 vnt.</S.MiddleDiv>
+        <S.MiddleDiv>{productsInCart} vnt.</S.MiddleDiv>
         <S.CounterButton onClick={() => increase(product)} btnType="plus">
           &#43;
         </S.CounterButton>
