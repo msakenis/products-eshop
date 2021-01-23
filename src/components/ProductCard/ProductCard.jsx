@@ -7,7 +7,6 @@ import { toCurrency } from '../../helpers/SharedFunctions';
 
 const ProductCard = ({ products }) => {
   const { addProduct, cartItems } = useContext(CartContext);
-
   const isInCart = (id) => cartItems.some((item) => item.id === id);
 
   return (
@@ -28,7 +27,7 @@ const ProductCard = ({ products }) => {
             <S.PriceTag>{toCurrency(product.price)}</S.PriceTag>
             <S.ButtonDiv>
               {isInCart(product.id) ? (
-                <CartCounter />
+                <CartCounter product={product} />
               ) : (
                 <Button handleClick={() => addProduct(product)}>
                   Į krepšelį
