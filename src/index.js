@@ -6,13 +6,16 @@ import { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import GlobalStyle from './GlobalStyle';
 import CartProvider from './contexts/cart.context';
+import { DisplayCartProvider } from './contexts/displayCart.context';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <CartProvider>
-        <Routes />
+        <DisplayCartProvider>
+          <Routes />
+        </DisplayCartProvider>
       </CartProvider>
     </ThemeProvider>
   </React.StrictMode>,
