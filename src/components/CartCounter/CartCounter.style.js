@@ -17,6 +17,7 @@ export const CounterButton = styled.button`
   font-size: 1.5rem;
   background: none;
   cursor: pointer;
+
   &&:hover {
     background-color: ${({ theme }) => theme.grey.hover};
   }
