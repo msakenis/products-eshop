@@ -1,13 +1,17 @@
 import actions from './actions';
 
+//func recounts total sum after evry action. Converted to Number
 const totalSum = (cartItems) =>
-  cartItems
-    .reduce((total, product) => total + product.price * product.quantity, 0)
-    .toFixed(2);
+  Number(
+    cartItems
+      .reduce((total, product) => total + product.price * product.quantity, 0)
+      .toFixed(2),
+  );
 
 const reducer = (state, action) => {
   switch (action.type) {
     case actions.ADD_PRODUCT:
+      //if product in cart return the same state, if no push with qnty 1
       if (!state.cartItems.find((item) => item.id === action.payload.id)) {
         state.cartItems.push({
           ...action.payload,
@@ -20,7 +24,7 @@ const reducer = (state, action) => {
         totalSum: totalSum(state.cartItems),
         cartItems: [...state.cartItems],
       };
-
+    //remove product from the state and recount total sum
     case actions.REMOVE_PRODUCT:
       const updatedCartItems = state.cartItems.filter(
         (item) => item.id !== action.payload.id,
@@ -31,30 +35,28 @@ const reducer = (state, action) => {
         totalSum: totalSum(updatedCartItems),
         cartItems: [...updatedCartItems],
       };
-
+    // find item and increase by 1. It needs to be added in immutable way. Reducer runs twice
+    // https://github.com/facebook/react/issues/16295
     case actions.INCREASE:
-      const updatedItems = state.cartItems.map((item) => {
-        if (item.id === action.payload.id) {
-          return { ...item, quantity: +item.quantity + 1 };
-        } else {
-          return item;
-        }
-      });
+      const updatedItems = state.cartItems.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quantity: +item.quantity + 1 }
+          : item,
+      );
 
       return {
         ...state,
         totalSum: totalSum(updatedItems),
         cartItems: [...updatedItems],
       };
-
+    // find item and increase by 1. It needs to be added in immutable way. Reducer runs twice
+    // https://github.com/facebook/react/issues/16295
     case actions.DECREASE:
-      const updatedList = state.cartItems.map((item) => {
-        if (item.id === action.payload.id) {
-          return { ...item, quantity: +item.quantity - 1 };
-        } else {
-          return item;
-        }
-      });
+      const updatedList = state.cartItems.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quantity: +item.quantity - 1 }
+          : item,
+      );
 
       return {
         ...state,
