@@ -9,6 +9,7 @@ const Home = () => {
       <S.ProductsFlex>
         <ProductCard products={products} />
       </S.ProductsFlex>
+
       <CartSection />
     </S.MainWrapper>
   );
