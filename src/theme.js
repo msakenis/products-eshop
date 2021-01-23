@@ -12,6 +12,9 @@ const theme = {
     main: '#f8f4f1',
     basket: '#f6f6f8',
   },
+
+  tablet: '1150px',
+  mobile: '810px',
 };
 
 export default theme;
